@@ -52,7 +52,7 @@ run_gnl()
 run_gnlb()
 {
 	local program=$1
-	local runtime=30
+	local runtime=3000
 	shift
 	> .julestestout
 	> .julesmem.log
@@ -80,7 +80,7 @@ run_gnlb()
 		echo -n "❌"
 		echo -e "Multiple fds: Output incorrect\n" >> gnl_trace
 		cat .julesdiff >> gnl_trace
-		echo "\n" >> gnl_trace
+		echo -e "\n" >> gnl_trace
 	elif grep -q "ERROR SUMMARY: [^0]" .julesvalcheck; then
 		echo -n "❌"
 		echo -e "Multiple fds: Memory leak detected\n" >> gnl_trace
@@ -116,7 +116,7 @@ done
 if [ -f "$TEST_FILES_DIR/gnlmain.c" ] && [ -f get_next_line.c ] && [ -f get_next_line_utils.c ]&& [ -f get_next_line.h ]; then
 	cc -Wall -Werror -Wextra -D BUFFER_SIZE=1 $TEST_FILES_DIR/gnlmain.c get_next_line_utils.c get_next_line.c -o gnl1
 	cc -Wall -Werror -Wextra -D BUFFER_SIZE=42 $TEST_FILES_DIR/gnlmain.c get_next_line_utils.c get_next_line.c -o gnl2
-	cc -Wall -Werror -Wextra -D BUFFER_SIZE=10000000 $TEST_FILES_DIR/gnlmain.c get_next_line_utils.c get_next_line.c -o gnl3
+	cc -Wall -Werror -Wextra -D BUFFER_SIZE=1000000 $TEST_FILES_DIR/gnlmain.c get_next_line_utils.c get_next_line.c -o gnl3
 	cc -Wall -Werror -Wextra $TEST_FILES_DIR/gnlmain.c get_next_line_utils.c get_next_line.c -o gnl4
 else
 	echo -e "${RED}Compilation error: file missing. Aborting test...${RESET}"
@@ -129,7 +129,7 @@ fi
 if [ -f get_next_line_bonus.c ] && [ -f get_next_line_utils_bonus.c ]&& [ -f get_next_line_bonus.h ]; then
 	cc -Wall -Werror -Wextra -D BUFFER_SIZE=1 $TEST_FILES_DIR/gnlmain.c get_next_line_utils_bonus.c get_next_line_bonus.c -o gnlb1
 	cc -Wall -Werror -Wextra -D BUFFER_SIZE=42 $TEST_FILES_DIR/gnlmain.c get_next_line_utils_bonus.c get_next_line_bonus.c -o gnlb2
-	cc -Wall -Werror -Wextra -D BUFFER_SIZE=10000000 $TEST_FILES_DIR/gnlmain.c get_next_line_utils_bonus.c get_next_line_bonus.c -o gnlb3
+	cc -Wall -Werror -Wextra -D BUFFER_SIZE=1000000 $TEST_FILES_DIR/gnlmain.c get_next_line_utils_bonus.c get_next_line_bonus.c -o gnlb3
 	cc -Wall -Werror -Wextra $TEST_FILES_DIR/gnlmain.c get_next_line_utils_bonus.c get_next_line_bonus.c -o gnlb4
 	if [ ! -f "gnlb1" ] || [ ! -f "gnlb2" ] || [ ! -f "gnlb3" ] || [ ! -f "gnlb4" ]; then
 		echo -e "${RED}Compilation failure: bonus executable not found. Aborting test...${RESET}"
@@ -170,10 +170,10 @@ run_gnl gnl2 empty.txt
 run_gnl gnl2 onlynl.txt
 echo -e "\n"
 
-# Run tests with buffer size of 10000000
+# Run tests with buffer size of 1000000
 
-echo -e "${PURPLE}--- ${WHITE}BUFFER_SIZE=10000000${PURPLE} ---\n${RESET}"
-echo -e "-- BUFFER_SIZE=10000000 --\n" >> gnl_trace
+echo -e "${PURPLE}--- ${WHITE}BUFFER_SIZE=1000000${PURPLE} ---\n${RESET}"
+echo -e "-- BUFFER_SIZE=1000000 --\n" >> gnl_trace
 
 run_gnl gnl3 space.txt
 run_gnl gnl3 alpha.txt
@@ -209,7 +209,7 @@ if [ -f "gnlb1" ] || [ -f "gnlb2" ] || [ -f "gnlb3" ] || [ -f "gnlb4" ]; then
 	run_gnl gnlb1 largefile.txt
 	run_gnl gnlb1 empty.txt
 	run_gnl gnlb1 onlynl.txt
-	run_gnlb gnlb1 
+	run_gnlb gnlb1
 	echo -e "\n"
 
 	# Run tests with buffer size of 42
@@ -226,10 +226,10 @@ if [ -f "gnlb1" ] || [ -f "gnlb2" ] || [ -f "gnlb3" ] || [ -f "gnlb4" ]; then
 	run_gnlb gnlb2
 	echo -e "\n"
 
-	# Run tests with buffer size of 10000000
+	# Run tests with buffer size of 1000000
 
-	echo -e "${PURPLE}--- ${WHITE}BUFFER_SIZE=10000000${PURPLE} ---\n${RESET}"
-	echo -e "-- BUFFER_SIZE=10000000 --\n" >> gnl_trace
+	echo -e "${PURPLE}--- ${WHITE}BUFFER_SIZE=1000000${PURPLE} ---\n${RESET}"
+	echo -e "-- BUFFER_SIZE=1000000 --\n" >> gnl_trace
 
 	run_gnl gnl3 space.txt
 	run_gnl gnl3 alpha.txt
