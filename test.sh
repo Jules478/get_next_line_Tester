@@ -88,6 +88,24 @@ run_gnlb()
 		echo -n "✅"
 	fi
 }
+echo -e "
+${PURPLE}######################################################################${RESET}
+${PURPLE}#${RESET}..${WHITE}######${RESET}...${WHITE}########${RESET}.${WHITE}########${RESET}....${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########${RESET}.${WHITE}##${RESET}.....${WHITE}##${RESET}.${WHITE}########${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}###${RESET}...${WHITE}##${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}...${WHITE}##${RESET}.....${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}####${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.........${WHITE}##${RESET}.${WHITE}##${RESET}......${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}...${WHITE}####${RESET}.${WHITE}######${RESET}......${WHITE}##${RESET}.......${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}######${RESET}......${WHITE}###${RESET}.......${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}##${RESET}..${WHITE}####${RESET}.${WHITE}##${RESET}.........${WHITE}##${RESET}.${WHITE}##${RESET}......${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}##${RESET}...${WHITE}###${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}...${WHITE}##${RESET}.....${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}..${WHITE}######${RESET}...${WHITE}########${RESET}....${WHITE}##${RESET}.......${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########${RESET}.${WHITE}##${RESET}.....${WHITE}##${RESET}....${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}.......${WHITE}####${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########...................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}###${RESET}...${WHITE}##${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}####${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}######${RESET}.....................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}..${WHITE}####${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}...${WHITE}###${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}########${RESET}.${WHITE}####${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########...................${PURPLE}#${RESET}
+${PURPLE}######################################################################${RESET}
+"
 
 # Check if the test files exist
 
@@ -143,24 +161,6 @@ if [ -f "gnl_trace" ]; then
 	echo -e "\n============================================================\n" >> gnl_trace
 fi
 echo -e "----- TRACE BEGINS -----\n" >> gnl_trace
-echo -e "
-${PURPLE}######################################################################${RESET}
-${PURPLE}#${RESET}..${WHITE}######${RESET}...${WHITE}########${RESET}.${WHITE}########${RESET}....${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########${RESET}.${WHITE}##${RESET}.....${WHITE}##${RESET}.${WHITE}########${PURPLE}#${RESET}
-${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}###${RESET}...${WHITE}##${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}...${WHITE}##${RESET}.....${WHITE}##${RESET}...${PURPLE}#${RESET}
-${PURPLE}#${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}####${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.........${WHITE}##${RESET}.${WHITE}##${RESET}......${WHITE}##${RESET}...${PURPLE}#${RESET}
-${PURPLE}#${RESET}.${WHITE}##${RESET}...${WHITE}####${RESET}.${WHITE}######${RESET}......${WHITE}##${RESET}.......${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}######${RESET}......${WHITE}###${RESET}.......${WHITE}##${RESET}...${PURPLE}#${RESET}
-${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}##${RESET}..${WHITE}####${RESET}.${WHITE}##${RESET}.........${WHITE}##${RESET}.${WHITE}##${RESET}......${WHITE}##${RESET}...${PURPLE}#${RESET}
-${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}##${RESET}...${WHITE}###${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}...${WHITE}##${RESET}.....${WHITE}##${RESET}...${PURPLE}#${RESET}
-${PURPLE}#${RESET}..${WHITE}######${RESET}...${WHITE}########${RESET}....${WHITE}##${RESET}.......${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########${RESET}.${WHITE}##${RESET}.....${WHITE}##${RESET}....${WHITE}##${RESET}...${PURPLE}#${RESET}
-${PURPLE}#${RESET}..................${WHITE}##${RESET}.......${WHITE}####${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########...................${PURPLE}#${RESET}
-${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}###${RESET}...${WHITE}##${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
-${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}####${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
-${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}######${RESET}.....................${PURPLE}#${RESET}
-${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}..${WHITE}####${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
-${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}...${WHITE}###${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
-${PURPLE}#${RESET}..................${WHITE}########${RESET}.${WHITE}####${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########...................${PURPLE}#${RESET}
-${PURPLE}######################################################################${RESET}
-"
 
 # Run tests with buffer size of 1
 
