@@ -256,7 +256,7 @@ if [ -f "gnlb1" ] || [ -f "gnlb2" ] || [ -f "gnlb3" ] || [ -f "gnlb4" ]; then
 else
 	echo -e "${PURPLE}--- ${WHITE}No bonus found. Ending test...${PURPLE} ---\n${RESET}"
 fi
-rm -rf .julestestout .julesmem.log .julesvalcheck .julesdiff gnl1 gnl2 gnl3 gnl4
+rm -rf .julestestout .julesmem.log .julesvalcheck .julesdiff gnl1 gnl2 gnl3 gnl4 gnlb1 gnlb2 gnlb3 gnlb4
 echo -e "---- TRACE ENDS ----" >> gnl_trace
 echo -e "${PURPLE}--- ${WHITE}Testing complete: gnl_trace created${PURPLE} ---\n${RESET}"
 
