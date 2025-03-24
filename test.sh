@@ -52,7 +52,7 @@ run_gnl()
 run_gnlb()
 {
 	local program=$1
-	local runtime=3000
+	local runtime=30
 	shift
 	> .julestestout
 	> .julesmem.log
@@ -143,6 +143,24 @@ if [ -f "gnl_trace" ]; then
 	echo -e "\n============================================================\n" >> gnl_trace
 fi
 echo -e "----- TRACE BEGINS -----\n" >> gnl_trace
+echo -e "
+${PURPLE}######################################################################${RESET}
+${PURPLE}#${RESET}..${WHITE}######${RESET}...${WHITE}########${RESET}.${WHITE}########${RESET}....${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########${RESET}.${WHITE}##${RESET}.....${WHITE}##${RESET}.${WHITE}########${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}###${RESET}...${WHITE}##${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}...${WHITE}##${RESET}.....${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}####${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.........${WHITE}##${RESET}.${WHITE}##${RESET}......${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}...${WHITE}####${RESET}.${WHITE}######${RESET}......${WHITE}##${RESET}.......${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}######${RESET}......${WHITE}###${RESET}.......${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}##${RESET}..${WHITE}####${RESET}.${WHITE}##${RESET}.........${WHITE}##${RESET}.${WHITE}##${RESET}......${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}..${WHITE}##${RESET}..........${WHITE}##${RESET}.......${WHITE}##${RESET}...${WHITE}###${RESET}.${WHITE}##${RESET}........${WHITE}##${RESET}...${WHITE}##${RESET}.....${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}..${WHITE}######${RESET}...${WHITE}########${RESET}....${WHITE}##${RESET}.......${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########${RESET}.${WHITE}##${RESET}.....${WHITE}##${RESET}....${WHITE}##${RESET}...${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}.......${WHITE}####${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########...................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}###${RESET}...${WHITE}##${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}####${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}##${RESET}.${WHITE}######${RESET}.....................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}..${WHITE}####${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}##${RESET}........${WHITE}##${RESET}..${WHITE}##${RESET}...${WHITE}###${RESET}.${WHITE}##${RESET}.........................${PURPLE}#${RESET}
+${PURPLE}#${RESET}..................${WHITE}########${RESET}.${WHITE}####${RESET}.${WHITE}##${RESET}....${WHITE}##${RESET}.${WHITE}########...................${PURPLE}#${RESET}
+${PURPLE}######################################################################${RESET}
+"
 
 # Run tests with buffer size of 1
 
